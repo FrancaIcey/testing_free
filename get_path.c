@@ -8,6 +8,7 @@
 char *_get_path(char **env)
 {
 	size_t index;
+	size_t length;
 	char *path = NULL;
 
 	for (index = 0; env[index] && _strncmp(env[index], "PATH=", 5); index++)
@@ -17,7 +18,7 @@ char *_get_path(char **env)
 
 		return (NULL);
 
-	size_t length = _strlen(env[index]) - 4;
+	length = _strlen(env[index]) - 4;
 
 	path = malloc(sizeof(char) * (length + 1));
 

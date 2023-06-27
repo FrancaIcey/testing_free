@@ -12,28 +12,30 @@
 
 int _fork_fun(char **arg, char **av, char **env, char *lineptr, int np, int c)
 {
-	pid_t child;
+	pid_t child_pid;
 	int status;
 	char *format = "%s: %d: %s: not found\n";
 
-	child = fork();
+	child_pid = fork();
 
-	if (child == 0)
-	{
-		if (execve(arg[0], arg, env) == -1)
+	if (child_pid == 0) {
+
+		if (execve(arg[0], arg, env) == -1) {perror("execve error");
+    exit(EXIT_FAILURE);
+}
 
 			fprintf(stderr, format, av[0], np, arg[0]);
-			if (!c)
+			if (!c){
 				free(arg[0]);
 			free(arg);
 			free(lineptr);
-			exit(errno);
+			exit(errno);}
 
 	}
 	else
-	{
+
 		wait(&status);
 
 			return (WEXITSTATUS(status));
-	}
 }
+

@@ -11,10 +11,11 @@ char **_get_token(char *lineptr)
 	char *token = NULL;
 	size_t i = 0;
 
+	int token_count;
 	if (lineptr == NULL)
 		return NULL;
 
-	int token_count = _strlen(lineptr) - _strlen(_strtok(lineptr, " \n\t\r")) + 1;
+	token_count = _strlen(lineptr) - _strlen(_strtok(lineptr, " \n\t\r")) + 1;
 	if (token_count <= 1)
 		return NULL;
 
@@ -23,7 +24,7 @@ char **_get_token(char *lineptr)
 		return NULL;
 
 	token = _strtok(lineptr, " \n\t\r");
-	for (i = 0; i < token_count - 1; i++)
+	for (i = 0; token_count -1; i++)
 	{
 		user_command[i] = token;
 		token = _strtok(NULL, " \n\t\r");

@@ -12,11 +12,11 @@
 
 extern char **environ;
 
-int _strcmp(char *s1, char *s2);
-size_t _strncmp(char *s1, char *s2, size_t n);
-int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
-char *_strcat(char *dest, char *src);
+int _strcmp(const char *s1, const char *s2);
+int _strncmp(const char *s1, const char *s2, size_t n);
+int _strlen(const char *s);
+char *_strcpy(char *dest, const char *src);
+char *_strcat(char *dest, const char *src);
 int _putchar(char c);
 int add_numbers(int a, int b);
 

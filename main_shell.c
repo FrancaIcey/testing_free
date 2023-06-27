@@ -1,14 +1,15 @@
 #include "main.h"
 
 /**
- * main - Entry point of the program.
+ * main - entry point of the program
  * @ac: Count of arguments.
  * @av: Array of arguments.
  * @env: Environment variables.
  *
  * Return: Exit status.
- */
-int main(int ac, char **av, char **env)
+ 
+int main */
+(ac), (char **av, char **env)
 {
 	char *getcommand;
 	char **user_command;
