@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * main - entry point of the program
@@ -7,9 +8,8 @@
  * @env: Environment variables.
  *
  * Return: Exit status.
- 
-int main */
-(ac), (char **av, char **env)
+ */
+int main(int ac, char **av, char **env)
 {
 	char *getcommand;
 	char **user_command;
